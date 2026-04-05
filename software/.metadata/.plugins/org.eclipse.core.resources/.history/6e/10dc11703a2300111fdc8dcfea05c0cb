@@ -1,0 +1,58 @@
+#include <system.h>
+#include <unistd.h>
+
+int main()
+{
+	volatile int* SWS    = (int*) SWS_BASE;
+	volatile int* LEDR   = (int*) LEDR_BASE;
+	volatile int* LEDG   = (int*) LEDG_BASE;
+	volatile int* HEX3_0 = (int*) HEX3_0_BASE;
+	int tmp = *SWS;
+	while(1)
+	{
+		tmp = *SWS;
+		*LEDR = *SWS;
+		*LEDG = *SWS;
+		switch (*SWS)
+		{
+			case 0x0: // 0000
+				*HEX3_0 = 0x3f;
+				break;
+			case 0x1: // 0001
+				*HEX3_0 = 0x06;
+				break;
+			case 0x2: // 0010
+				*HEX3_0 = 0x5b;
+				break;
+			case 0x3: // 0011
+				*HEX3_0 = 0x4f;
+				break;
+			case 0x4: // 0100
+				*HEX3_0 = 0x66;
+				break;
+			case 0x5: // 0101
+				*HEX3_0 = 0x6d;
+				break;
+			case 0x6: // 0110
+				*HEX3_0 = 0x7d;
+				break;
+			case 0x7: // 0111
+				*HEX3_0 = 0x07;
+				break;
+			case 0x8: // 1000
+				*HEX3_0 = 0x7f;
+				break;
+			case 0x9: // 1001
+				*HEX3_0 = 0x6f;
+				break;
+			default:  // 1X1X
+				*HEX3_0 = 0x00;
+				break;
+		}
+		while (tmp == *SWS){
+			tmp = *SWS;
+		}
+	}
+	return 0;
+}
+

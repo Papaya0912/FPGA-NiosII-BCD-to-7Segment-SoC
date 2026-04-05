@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Mar 17 21:23:09 2026
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : BCDto7Seg
+Top-level Entity Name : TestBCDto7Seg
+Family : Cyclone IV E
+Total logic elements : 1,650
+    Total combinational functions : 1,444
+    Dedicated logic registers : 890
+Total registers : 890
+Total pins : 42
+Total virtual pins : 0
+Total memory bits : 272,384
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

@@ -1,0 +1,14 @@
+	component BCDto7Seg is
+		port (
+			clk_clk                         : in  std_logic                    := 'X';             -- clk
+			hex3_0_external_interface_HEX0  : out std_logic_vector(6 downto 0);                    -- HEX0
+			hex3_0_external_interface_HEX1  : out std_logic_vector(6 downto 0);                    -- HEX1
+			hex3_0_external_interface_HEX2  : out std_logic_vector(6 downto 0);                    -- HEX2
+			hex3_0_external_interface_HEX3  : out std_logic_vector(6 downto 0);                    -- HEX3
+			ledg_external_connection_export : out std_logic_vector(3 downto 0);                    -- export
+			ledr_external_connection_export : out std_logic_vector(3 downto 0);                    -- export
+			reset_reset_n                   : in  std_logic                    := 'X';             -- reset_n
+			sws_external_connection_export  : in  std_logic_vector(3 downto 0) := (others => 'X')  -- export
+		);
+	end component BCDto7Seg;
+
